@@ -3,7 +3,7 @@ var searchInput = document.getElementById('search');
 var searchStatus = document.getElementById('status');
 var debounceTimeout = setTimeout(function () {}, 100);
 
-function fetch(method, url, body = {}) {
+function fetch(method, url, body) {
   var xhr = new XMLHttpRequest();
   xhr.open(method, url, true);
   xhr.responseType = 'json';
@@ -30,9 +30,9 @@ function fetch(method, url, body = {}) {
   };
 }
 
-searchInput.addEventListener('input', (e) => {
+searchInput.addEventListener('input', function (e) {
   clearTimeout(debounceTimeout);
-  debounceTimeout = setTimeout(() => {
+  debounceTimeout = setTimeout(function () {
     searchStatus.textContent = 'Загрузка...';
     filmsElem.innerHTML = '';
     fetch('POST', 'https://api.dyadka.gq/search', { query: e.target.value });
