@@ -1,7 +1,7 @@
 var filmsElem = document.getElementById('films');
 var searchInput = document.getElementById('search');
 var searchStatus = document.getElementById('status');
-var debounceTimeout = setTimeout(() => null, 100);
+var debounceTimeout = setTimeout(function () {}, 100);
 
 function fetch(method, url, body = {}) {
   var xhr = new XMLHttpRequest();
