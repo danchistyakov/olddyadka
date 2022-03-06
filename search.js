@@ -20,7 +20,8 @@ function fetch(method, url, body) {
     for (var i = 0; i < data.length; i++) {
       var filmElem = document.createElement('li');
       filmElem.className = 'film';
-      filmElem.innerHTML = `<img class='film-poster' src=${data[i].poster}></img><p>${data[i].title}</p>`;
+      filmElem.innerHTML =
+        "<img class='film-poster' src=" + data[i].poster + '></img><p>' + data[i].title + '</p>';
       filmsElem.append(filmElem);
     }
   };
